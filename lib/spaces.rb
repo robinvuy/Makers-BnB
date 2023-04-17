@@ -1,0 +1,2 @@
+class Spaces
+end
