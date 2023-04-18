@@ -8,18 +8,18 @@
 </head>
 <body>
   <h1>List a Space</h1>
-  <form class="form-container" action="/spaces" method="post">
+  <form class="form-container" action="/spaces/new_space" method="post">
     <div class="form-input">
-      <label class="form-label" for="space_name">Name:</label>
-      <input type="text" id="space_name" name="space_name" required>
+      <label class="form-label" for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
     </div>
     <div class="form-input">
-      <label class="form-label" for="space_description">Description:</label>
-      <textarea id="space_description" name="space_description" required></textarea>
+      <label class="form-label" for="description">Description:</label>
+      <textarea id="description" name="description" required></textarea>
     </div>
     <div class="form-input">
-      <label class="form-label" for="space_price">Price per night:</label>
-      <input type="number" id="space_price" name="space_price" min="0" step="0.01" required>
+      <label class="form-label" for="price">Price per night:</label>
+      <input type="number" id="price" name="price" min="0" step="0.01" required>
     </div>
     <button type="submit">Create Space</button>
   </form>

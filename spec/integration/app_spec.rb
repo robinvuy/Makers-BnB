@@ -47,5 +47,15 @@ describe Application do
     end
   end
 
-  context
+  context 'POST /spaces/new_space' do 
+    it 'should create a new space' do
+      response = post('/spaces/new_space', {name: 'My Space', price: 100, description: 'The best space ever', user_id: 1})
+      
+      response = get "/spaces"
+      expect(response.status).to eq(200)
+      expect(response.body).to include('My Space')
+      expect(response.body).to include('100')
+      expect(response.body).to include('The best space ever')
+    end
+  end
 end
