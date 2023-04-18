@@ -16,12 +16,12 @@ RSpec.describe SpacesRepository do
 
   it 'can create a new space' do
     repo = SpacesRepository.new
-    space = Spaces.new
-    space.name = 'My Space'
-    space.price = 100
-    space.description = 'The best space ever'
-    space.user_id = 1
-    repo.create(space)
+      space = Spaces.new
+      space.name = 'My Space'
+      space.price = 100
+      space.description = 'The best space ever'
+      space.user_id = 1
+      repo.create(space)
 
     created_space = repo.all
   

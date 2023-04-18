@@ -49,7 +49,8 @@ describe Application do
 
   context 'POST /spaces/new_space' do 
     it 'should create a new space' do
-      response = post('/spaces/new_space', {name: 'My Space', price: 100, description: 'The best space ever', user_id: 1})
+      response = post('/spaces/new_space', 
+      {name: 'My Space', price: 100, description: 'The best space ever', user_id: 1})
       
       response = get "/spaces"
       expect(response.status).to eq(200)
