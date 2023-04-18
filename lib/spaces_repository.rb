@@ -6,14 +6,14 @@ class SpacesRepository
     result = DatabaseConnection.exec_params(sql, [])
 
     all_spaces = []
-    result.each do |space|
+    result.each do |space_data|
         space = Spaces.new
 
-        space.id = space['id']
-        space.name = space['name']
-        space.description = space['description']
-        space.price = space['price']
-        space.user_id = space['user_id']
+        space.id = space_data['id']
+        space.name = space_data['name']
+        space.description = space_data['description']
+        space.price = space_data['price'].to_i
+        space.user_id = space_data['user_id']
 
         all_spaces << space
     end
