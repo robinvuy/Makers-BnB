@@ -19,10 +19,33 @@ describe Application do
 
 
   context 'GET /' do
-    it 'should get the homepage' do
+    it 'should get the homepage with ' do
       response = get('/')
 
       expect(response.status).to eq(200)
     end
   end
+
+  context 'GET /spaces' do
+    it 'should get the spaces page' do
+      response = get('/spaces')
+
+      expect(response.status).to eq(200)
+      expect(response.body).to include('Spaces')
+      expect(response.body).to include('description1')
+    end
+  end
+
+  context 'GET /spaces/new_space' do 
+    it ' should show the new space form' do
+      response = get('/spaces/new_space')
+
+      expect(response.status).to eq(200)
+      expect(response.body).to include('List a Space')
+      expect(response.body).to include('Name')
+      expect(response.body).to include('Price per night')
+    end
+  end
+
+  context
 end

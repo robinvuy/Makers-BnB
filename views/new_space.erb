@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create a New Space</title>
+  <link rel="stylesheet" href="new_space_style.css">
+</head>
+<body>
+  <h1>List a Space</h1>
+  <form class="form-container" action="/spaces" method="post">
+    <div class="form-input">
+      <label class="form-label" for="space_name">Name:</label>
+      <input type="text" id="space_name" name="space_name" required>
+    </div>
+    <div class="form-input">
+      <label class="form-label" for="space_description">Description:</label>
+      <textarea id="space_description" name="space_description" required></textarea>
+    </div>
+    <div class="form-input">
+      <label class="form-label" for="space_price">Price per night:</label>
+      <input type="number" id="space_price" name="space_price" min="0" step="0.01" required>
+    </div>
+    <button type="submit">Create Space</button>
+  </form>
+</body>
+</html>

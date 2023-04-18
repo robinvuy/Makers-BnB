@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spaces</title>
+  <link rel="stylesheet" href="spaces_style.css">
+</head>
+<body>
+  <h1>Spaces</h1>
+  <% @spaces.each do |space| %>
+    <div class="space-box">
+      <div class="space-name">
+        <%= space.name %>
+      </div>
+      <div class="space-description">
+        <%= space.description %>
+      </div>
+      <div class="space-price">
+        <%= space.price %>
+      </div>
+    </div>
+  <% end %>
+</body>
+</html>
