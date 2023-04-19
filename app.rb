@@ -68,6 +68,5 @@ class Application < Sinatra::Base
     repo.create(new_user)
 
     redirect '/login'
-    # return '<h2>Signup</h2>'
   end
 end
