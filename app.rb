@@ -26,9 +26,11 @@ class Application < Sinatra::Base
     if user && user.password == password
       @user = user
     end
-  return erb(:logged_in)
+  
+    redirect '/spaces'
   end
-    get '/spaces' do
+  
+  get '/spaces' do
     repo = SpacesRepository.new
     @spaces = repo.all
     return erb(:spaces)
@@ -48,9 +50,11 @@ class Application < Sinatra::Base
     repo.create(space)
     redirect '/spaces'
   end
-  get '/logged_in' do
-    return erb(:logged_in)
-  end
+  
+  # Remove logged_in ERB now that once logged in it redirects to spaces
+  # get '/logged_in' do
+  #   return erb(:logged_in)
+  # end
 
   get '/' do 
     return erb(:user_signup)
