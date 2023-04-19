@@ -33,8 +33,6 @@ describe Application do
 
       expect(response.status).to eq(200)
       expect(response.body).to include('<h2>Login page</h2>')
-      # expect(response.body).to include('alice@gmail.com')
-      # expect(response.body).to include('password_hash_for_alice')
     end
   end
 
