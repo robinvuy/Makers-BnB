@@ -66,6 +66,8 @@ class Application < Sinatra::Base
     new_user.password = params[:password]
 
     repo.create(new_user)
-    return '<h2>Signup</h2>'
+
+    redirect '/login'
+    # return '<h2>Signup</h2>'
   end
 end

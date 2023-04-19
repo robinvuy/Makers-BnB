@@ -16,7 +16,7 @@ describe Application do
   # accross multiple RSpec files (for example, have
   # one test suite for each set of related features),
   # you can duplicate this test file to create a new one.
-  def reset_table_users
+  def reset_table_spaces
     seed_sql = File.read('spec/seeds/makersbnb_seed.sql')
     connection = PG.connect({ host: '127.0.0.1', dbname: 'makersbnb_test' })
   
@@ -27,7 +27,7 @@ describe Application do
     reset_table_users
   end
   
- def reset_table_spaces
+ def reset_table_users
     seed_sql = File.read('spec/seed.sql')
     connection = PG.connect({ host: '127.0.0.1', dbname: 'makersbnb_test' })
     connection.exec(seed_sql)
@@ -36,7 +36,8 @@ describe Application do
   before(:each) do
     reset_table_spaces()
   end
-    context 'GET /spaces' do
+
+  context 'GET /spaces' do
     it 'should get the spaces page' do
       response = get('/spaces')
 
@@ -67,6 +68,8 @@ describe Application do
       expect(response.body).to include('My Space')
       expect(response.body).to include('100')
       expect(response.body).to include('The best space ever')
+    end
+  end
 
   context 'GET /login' do
     it 'retrieves user information from supplied email' do
@@ -76,6 +79,7 @@ describe Application do
       expect(response.body).to include('<h2>Login page</h2>')
     end
   end
+
   context 'POST /login' do
     it 'renders the login page 'do
       response = post('/login', email: 'alice@gmail.com', password: 'password_hash_for_alice') 
