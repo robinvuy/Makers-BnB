@@ -46,8 +46,8 @@ class Application < Sinatra::Base
     space.description = params[:description]
     space.user_id = params[:user_id]
     repo.create(space)
-  
     redirect '/spaces'
+  end
   get '/logged_in' do
     return erb(:logged_in)
   end
