@@ -53,11 +53,6 @@ class Application < Sinatra::Base
     repo.create(space)
     redirect '/spaces'
   end
-  
-  # Remove logged_in ERB now that once logged in it redirects to spaces
-  # get '/logged_in' do
-  #   return erb(:logged_in)
-  # end
 
   get '/' do 
     return erb(:user_signup)
