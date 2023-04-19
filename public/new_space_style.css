@@ -1,0 +1,12 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+}
+.form-input {
+  margin-bottom: 10px;
+}
+.form-label {
+  font-weight: bold;
+}

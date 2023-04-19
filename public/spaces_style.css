@@ -1,0 +1,17 @@
+.space-box {
+  border: 1px solid black;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.space-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+.space-description {
+  flex-grow: 1;
+}
+.space-price {
+  align-self: flex-end;
+}
