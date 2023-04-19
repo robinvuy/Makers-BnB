@@ -1,3 +1,3 @@
 require_relative './app'
-DatabaseConnection.connect('makersbnb')
+# DatabaseConnection.connect('makersbnb')
 run Application

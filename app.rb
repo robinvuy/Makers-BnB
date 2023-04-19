@@ -4,6 +4,9 @@ require_relative 'lib/user_repository'
 require 'sinatra/base'
 require 'sinatra/reloader'
 
+environment = ENV['ENV'] == 'test' ? 'makersbnb_test' : 'makersbnb'
+DatabaseConnection.connect(environment)
+
 class Application < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
