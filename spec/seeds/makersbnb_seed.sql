@@ -1,9 +1,4 @@
-TRUNCATE TABLE users, spaces RESTART IDENTITY;
-
-INSERT INTO users (username, name, email, password)
-VALUES
-  ('username1', 'name1', 'username1@example.com', 'password1'),
-  ('username2', 'name2', 'username2@example.com', 'password2');
+TRUNCATE TABLE spaces RESTART IDENTITY;
 
 INSERT INTO spaces (name, description, price, user_id)
 VALUES
