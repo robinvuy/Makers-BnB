@@ -3,14 +3,11 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require_relative 'lib/spaces_repository'
 
-DatabaseConnection.connect('makersbnb_test')
+environment = ENV['ENV'] == 'test' ? 'makersbnb_test' : 'makersbnb'
+DatabaseConnection.connect(environment)
 class Application < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
-  end
-
-  get '/' do
-    return erb(:index)
   end
 
   get '/spaces' do

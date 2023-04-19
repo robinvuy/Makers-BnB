@@ -16,14 +16,15 @@ describe Application do
   # accross multiple RSpec files (for example, have
   # one test suite for each set of related features),
   # you can duplicate this test file to create a new one.
+  def reset_tables
+    seed_sql = File.read('spec/seeds/makersbnb_seed.sql')
+    connection = PG.connect({ host: '127.0.0.1', dbname: 'makersbnb_test' })
+  
+    connection.exec(seed_sql)
+  end
 
-
-  context 'GET /' do
-    it 'should get the homepage with ' do
-      response = get('/')
-
-      expect(response.status).to eq(200)
-    end
+  before(:each) do
+    reset_tables
   end
 
   context 'GET /spaces' do

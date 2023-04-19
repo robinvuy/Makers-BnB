@@ -1,6 +1,6 @@
-ENV['ENV'] = 'test'
-
 require 'database_connection'
+
+ENV['ENV'] = 'test'
 
 DatabaseConnection.connect('makersbnb_test')
 
